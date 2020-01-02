@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ThingContext from '../../contexts/ThingContext'
-import ThingApiService from '../../services/thing-api-service'
-import { Hyph, Section } from '../../components/Utils/Utils'
-import { ThingStarRating } from '../../components/ThingStarRating/ThingStarRating'
-import ReviewForm from '../../components/ReviewForm/ReviewForm'
-import './ThingPage.css'
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ThingContext from '../../contexts/ThingContext';
+import ThingApiService from '../../services/thing-api-service';
+import { Hyph, Section } from '../../components/Utils/Utils';
+import { ThingStarRating } from '../../components/ThingStarRating/ThingStarRating';
+import ReviewForm from '../../components/ReviewForm/ReviewForm';
+import './ThingPage.css';
 
 export default class ThingPage extends Component {
   static defaultProps = {
@@ -15,7 +15,7 @@ export default class ThingPage extends Component {
   static contextType = ThingContext
 
   componentDidMount() {
-    const { thingId } = this.props.match.params
+    const { thingId } = this.props.match.params;
     this.context.clearError()
     ThingApiService.getThing(thingId)
       .then(this.context.setThing)
@@ -30,7 +30,7 @@ export default class ThingPage extends Component {
   }
 
   renderThing() {
-    const { thing, reviews } = this.context
+    const { thing, reviews } = this.context;
     return <>
       <div className='ThingPage__image' style={{backgroundImage: `url(${thing.image})`}} />
       <h2>{thing.title}</h2>
@@ -41,8 +41,8 @@ export default class ThingPage extends Component {
   }
 
   render() {
-    const { error, thing } = this.context
-    let content
+    const { error, thing } = this.context;
+    let content;
     if (error) {
       content = (error.error === `Thing doesn't exist`)
         ? <p className='red'>Thing not found</p>

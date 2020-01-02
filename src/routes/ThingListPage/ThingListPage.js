@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import ThingListContext from '../../contexts/ThingListContext'
-import ThingApiService from '../../services/thing-api-service'
-import { Section } from '../../components/Utils/Utils'
-import ThingListItem from '../../components/ThingListItem/ThingListItem'
-import './ThingListPage.css'
+import React, { Component } from 'react';
+import ThingListContext from '../../contexts/ThingListContext';
+import ThingApiService from '../../services/thing-api-service';
+import { Section } from '../../components/Utils/Utils';
+import ThingListItem from '../../components/ThingListItem/ThingListItem';
+import './ThingListPage.css';
 
 export default class ThingListPage extends Component {
   static contextType = ThingListContext
@@ -16,7 +16,7 @@ export default class ThingListPage extends Component {
   }
 
   renderThings() {
-    const { thingList = [] } = this.context
+    const { thingList = [] } = this.context;
     return thingList.map(thing =>
       <ThingListItem
         key={thing.id}
@@ -26,7 +26,7 @@ export default class ThingListPage extends Component {
   }
 
   render() {
-    const { error } = this.context
+    const { error } = this.context;
     return (
       <Section list className='ThingListPage'>
         {error

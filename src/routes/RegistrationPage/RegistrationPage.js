@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Section } from '../../components/Utils/Utils'
-import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import React, { Component } from 'react';
+import { Section } from '../../components/Utils/Utils';
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
@@ -10,7 +10,7 @@ export default class RegistrationPage extends Component {
   }
 
   handleRegistrationSuccess = user => {
-    const { history } = this.props
+    const { history } = this.props;
     history.push('/login')
   }
 
@@ -18,9 +18,7 @@ export default class RegistrationPage extends Component {
     return (
       <Section className='RegistrationPage'>
         <h2>Register</h2>
-        <RegistrationForm
-          onRegistrationSuccess={this.handleRegistrationSuccess}
-        />
+        <RegistrationForm onRegistrationSuccess={this.handleRegistrationSuccess} />
       </Section>
     )
   }

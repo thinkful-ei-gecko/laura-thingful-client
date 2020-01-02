@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config.js';
 
 const ThingApiService = {
   getThings() {
@@ -54,4 +54,4 @@ const ThingApiService = {
   }
 }
 
-export default ThingApiService
+export default ThingApiService;

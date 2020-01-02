@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config.js';
 
 const TokenService = {
   saveAuthToken(token) {
@@ -18,4 +18,4 @@ const TokenService = {
   },
 }
 
-export default TokenService
+export default TokenService;
