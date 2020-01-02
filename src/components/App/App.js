@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import Header from '../Header/Header'
-// import PrivateRoute from '../Utils/PrivateRoute'
-// import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-import ThingListPage from '../../routes/ThingListPage/ThingListPage'
-import ThingPage from '../../routes/ThingPage/ThingPage'
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-import './App.css'
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from '../Header/Header';
+import PrivateRoute from '../Utils/PrivateRoute';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import ThingListPage from '../../routes/ThingListPage/ThingListPage';
+import ThingPage from '../../routes/ThingPage/ThingPage';
+import LoginPage from '../../routes/LoginPage/LoginPage';
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import './App.css';
 
 class App extends Component {
   state = { hasError: false }
@@ -27,26 +27,11 @@ class App extends Component {
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={ThingListPage}
-            />
-            <Route
-              path={'/login'}
-              component={LoginPage}
-            />
-            <Route
-              path={'/register'}
-              component={RegistrationPage}
-            />
-            <Route
-              path={'/thing/:thingId'}
-              component={ThingPage}
-            />
-            <Route
-              component={NotFoundPage}
-            />
+            <Route exact path={'/'} component={ThingListPage} />
+            <PublicOnlyRoute path={'/login'} component={LoginPage} />
+            <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
+            <PrivateRoute path={'/thing/:thingId'} component={ThingPage} />
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
       </div>
@@ -54,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
