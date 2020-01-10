@@ -6,23 +6,21 @@ import ThingListItem from '../../components/ThingListItem/ThingListItem';
 import './ThingListPage.css';
 
 export default class ThingListPage extends Component {
-  static contextType = ThingListContext
+  static contextType = ThingListContext;
 
   componentDidMount() {
-    this.context.clearError()
-    ThingApiService.getThings()
+    this.context.clearError();
+    ThingApiService
+      .getThings()
       .then(this.context.setThingList)
-      .catch(this.context.setError)
+      .catch(this.context.setError);
   }
 
   renderThings() {
     const { thingList = [] } = this.context;
     return thingList.map(thing =>
-      <ThingListItem
-        key={thing.id}
-        thing={thing}
-      />
-    )
+      <ThingListItem key={thing.id} thing={thing} />
+    );
   }
 
   render() {

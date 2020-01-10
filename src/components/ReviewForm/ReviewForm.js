@@ -1,31 +1,26 @@
-import React, { Component } from 'react'
-import ThingContext from '../../contexts/ThingContext'
-import ThingApiService from '../../services/thing-api-service'
-import { Button, Textarea } from '../Utils/Utils'
-import './ReviewForm.css'
+import React, { Component } from 'react';
+import ThingContext from '../../contexts/ThingContext';
+import ThingApiService from '../../services/thing-api-service';
+import { Button, Textarea } from '../Utils/Utils';
+import './ReviewForm.css';
 
 export default class ReviewForm extends Component {
-  static contextType = ThingContext
+  static contextType = ThingContext;
 
   handleSubmit = ev => {
-    ev.preventDefault()
-    const { thing } = this.context
-    const { text, rating } = ev.target
+    ev.preventDefault();
+    const { thing } = this.context;
+    const { text, rating } = ev.target;
 
     ThingApiService.postReview(thing.id, text.value, Number(rating.value))
       .then(this.context.addReview)
-      .then(() => {
-        text.value = ''
-      })
+      .then(() => { text.value = '' })
       .catch(this.context.setError)
   }
 
   render() {
     return (
-      <form
-        className='ReviewForm'
-        onSubmit={this.handleSubmit}
-      >
+      <form className='ReviewForm' onSubmit={this.handleSubmit}>
         <div className='text'>
           <Textarea
             required
@@ -54,9 +49,7 @@ export default class ReviewForm extends Component {
           </select>
         </div>
 
-        <Button type='submit'>
-          Post review
-        </Button>
+        <Button type='submit'>Post review</Button>
       </form>
     )
   }

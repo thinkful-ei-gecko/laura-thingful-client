@@ -5,9 +5,7 @@ import { Section } from '../../components/Utils/Utils';
 export default class LoginPage extends Component {
   static defaultProps = {
     location: {},
-    history: {
-      push: () => {},
-    },
+    history: { push: () => {} }
   }
 
   handleLoginSuccess = () => {
@@ -22,6 +20,6 @@ export default class LoginPage extends Component {
         <h2>Login</h2>
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </Section>
-    )
+    );
   }
 }

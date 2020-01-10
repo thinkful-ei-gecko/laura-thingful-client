@@ -5,7 +5,7 @@ const ThingApiService = {
   getThings() {
     return fetch(`${config.API_ENDPOINT}/things`, {
       headers: {
-      },
+      }
     })
       .then(res =>
         (!res.ok)
@@ -17,7 +17,7 @@ const ThingApiService = {
     return fetch(`${config.API_ENDPOINT}/things/${thingId}`, {
       headers: {
         'authorization': `basic ${TokenService.getAuthToken()}`
-      },
+      }
     })
       .then(res =>
         (!res.ok)
@@ -47,8 +47,8 @@ const ThingApiService = {
       body: JSON.stringify({
         thing_id: thingId,
         rating,
-        text,
-      }),
+        text
+      })
     })
       .then(res =>
         (!res.ok)

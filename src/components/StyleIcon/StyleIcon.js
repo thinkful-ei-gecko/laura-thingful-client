@@ -1,5 +1,5 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const styleIconMap = {
   'Listicle': <FontAwesomeIcon className='blue' icon='list-ul' />,
@@ -8,7 +8,7 @@ const styleIconMap = {
   'Interview': <FontAwesomeIcon className='yellow' icon='pen-alt' />,
   'Story': <FontAwesomeIcon className='green' icon='book-open' />,
   'default': null
-}
+};
 
 export default function StyleIcon({ style='default' }) {
   return styleIconMap[style]
