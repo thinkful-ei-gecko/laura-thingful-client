@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { ThingStarRating } from '../ThingStarRating/ThingStarRating'
-import './ThingListItem.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { ThingStarRating } from '../ThingStarRating/ThingStarRating';
+import './ThingListItem.css';
 
 export default class ThingListItem extends Component {
   render() {
-    const { thing } = this.props
+    const { thing } = this.props;
 
     return (
       <Link to={`/thing/${thing.id}`} className='ThingListItem'>
@@ -41,10 +41,10 @@ function readableReviewCount(number) {
 }
 
 function truncate(text) {
-  const words = text.split(' ')
+  const words = text.split(' ');
 
   if (words.length > 10) {
-    return words.slice(0, 10).join(' ') + ' ...'
+    return words.slice(0, 10).join(' ') + ' ...';
   }
 
   return text

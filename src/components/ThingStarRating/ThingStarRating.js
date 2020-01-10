@@ -1,5 +1,5 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function ThingStarRating({rating}) {
   const stars = [
@@ -8,10 +8,10 @@ export function ThingStarRating({rating}) {
     { filled: false },
     { filled: false },
     { filled: false },
-  ]
+  ];
 
   for (let i = 0; i < rating; i++) {
-    stars[i].filled = true
+    stars[i].filled = true;
   }
 
   return <span className='ThingStarRating'>
@@ -20,6 +20,6 @@ export function ThingStarRating({rating}) {
 }
 
 function Star({filled}) {
-  const library = filled ? 'fas' : 'far'
+  const library = filled ? 'fas' : 'far';
   return <FontAwesomeIcon className='blue' icon={ [ library, 'star'  ]  } />
 }
