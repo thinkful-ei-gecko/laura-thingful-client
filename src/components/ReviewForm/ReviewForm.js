@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ThingContext from '../../contexts/ThingContext';
-import ThingApiService from '../../services/thing-api-service';
+import ThingContext from '../../contexts/ThingContext.js';
+import ThingApiService from '../../services/thing-api-service.js';
 import { Button, Textarea } from '../Utils/Utils';
 import './ReviewForm.css';
 
@@ -22,25 +22,15 @@ export default class ReviewForm extends Component {
     return (
       <form className='ReviewForm' onSubmit={this.handleSubmit}>
         <div className='text'>
-          <Textarea
-            required
-            aria-label='Type a review...'
-            name='text'
-            id='text'
-            cols='30'
-            rows='3'
-            placeholder='Type a review..'>
+          <Textarea required aria-label='Type a review...' name='text'
+            id='text' cols='30' rows='3' placeholder='Type a review..'>
           </Textarea>
         </div>
 
         <div className='select'>
           <label htmlFor='rating'>Rate this thing!</label>
-          <select
-            required
-            aria-label='Rate this thing!'
-            name='rating'
-            id='rating'
-          >
+          <select required aria-label='Rate this thing!'
+            name='rating' id='rating'>
             <option value='1'>1 Star</option>
             <option value='2'>2 Stars</option>
             <option value='3'>3 Stars</option>

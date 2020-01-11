@@ -43,19 +43,21 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form className='LoginForm' onSubmit={this.handleSubmitJwtAuth} >
+      <form className='LoginForm RegLogForm' onSubmit={this.handleSubmitJwtAuth} >
         
         <div role='alert'>{error && <p className='red'>{error}</p>}</div>
         
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>User name</label>
-          <Input required name='user_name' id='LoginForm__user_name'>
+          <Input required name='user_name' 
+           className='formBox' id='LoginForm__user_name'>
           </Input>
         </div>
 
         <div className='password'>
           <label htmlFor='LoginForm__password'>Password</label>
-          <Input required name='password' type='password' id='LoginForm__password'>
+          <Input required name='password' type='password' 
+           className='formBox' id='LoginForm__password'>
           </Input>
         </div>
 

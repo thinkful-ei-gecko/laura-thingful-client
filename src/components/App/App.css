@@ -13,3 +13,12 @@
 .App__main {
   margin-top: 20px;
 }
+
+.RegLogForm {
+  margin: 3px auto;
+  width: 75%;
+}
+
+.formBox {
+  border: 1px solid rgb(176, 176, 176);
+}
